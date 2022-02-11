@@ -23,3 +23,7 @@ Working on:
 - Flutter File Structure: https://medium.com/flutter-community/flutter-scalable-folder-files-structure-8f860faafebd
 - Flutter File Structure 2: https://www.geeksforgeeks.org/flutter-file-structure/
 - Flutter 2 Crash Course - Part 1: https://www.youtube.com/watch?v=68wS5MTNAJo
+- primaryColor VS primarySwatch: https://stackoverflow.com/questions/50212484/what-is-the-difference-between-primarycolor-and-primaryswatch-in-flutter
+- Flutter BLOC: https://pub.dev/packages/flutter_bloc
+- What's new in Flutter 2.10: https://medium.com/flutter/whats-new-in-flutter-2-10-5aafb0314b12
+- `new` keyword use in Dart 2: https://stackoverflow.com/questions/50091389/do-you-need-to-use-the-new-keyword-in-dart

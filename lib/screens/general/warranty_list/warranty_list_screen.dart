@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:garancija_app/screens/general/warranty_list/components/warranty_item.dart';
 
 class WarrantyList extends StatefulWidget {
   const WarrantyList({Key? key, required this.title}) : super(key: key);
@@ -10,6 +11,8 @@ class WarrantyList extends StatefulWidget {
 }
 
 class _WarrantyListState extends State<WarrantyList> {
+  final List warranties = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,10 +21,8 @@ class _WarrantyListState extends State<WarrantyList> {
       ),
       body: Center(
         child: ListView(
-          children: const <Widget>[
-            Text("Warranty 1"),
-            Text("Warranty 2"),
-            Text("Warranty 3"),
+          children: <WarrantyItem>[
+            ...warranties.map((warranty) => WarrantyItem(itemId: warranty)),
           ],
         ),
       ),
