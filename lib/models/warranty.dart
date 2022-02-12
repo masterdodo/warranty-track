@@ -2,16 +2,19 @@ class Warranty {
   String id;
   String name;
   String imageSrc;
-  DateTime expiryDate;
+  DateTime purchaseDate;
+  int warrantyLength;
 
-  Warranty(this.id, this.name, this.imageSrc, this.expiryDate);
+  Warranty(this.id, this.name, this.imageSrc, this.purchaseDate,
+      this.warrantyLength);
 
   Map<String, dynamic> toJson() {
     return {
       'id': id,
       'name': name,
       'imageSrc': imageSrc,
-      'expiryDate': expiryDate,
+      'purchaseDate': purchaseDate,
+      'warrantyLength': warrantyLength
     };
   }
 }

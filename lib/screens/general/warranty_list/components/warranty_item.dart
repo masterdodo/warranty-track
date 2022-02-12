@@ -15,7 +15,9 @@ class _WarrantyItemState extends State<WarrantyItem> {
 
   @override
   void initState() {
-    item = Warranty(widget.itemId, "Test Product", "img.png", DateTime.now());
+    //TODO: get item from database @return Warranty
+    item =
+        Warranty(widget.itemId, "Test Product", "img.png", DateTime.now(), 2);
     super.initState();
   }
 
@@ -35,9 +37,21 @@ class _WarrantyItemState extends State<WarrantyItem> {
                   ),
                 ),
                 Text(
-                  '${item.expiryDate.day}. ${item.expiryDate.month}. ${item.expiryDate.year}',
+                  '${item.purchaseDate.day}. ${item.purchaseDate.month}. ${item.purchaseDate.year}',
                   style: Theme.of(context).textTheme.headline6,
                 ),
+                PopupMenuButton(
+                    icon: const Icon(Icons.more_vert),
+                    itemBuilder: ((context) => [
+                          const PopupMenuItem(
+                            value: 1,
+                            child: Text('Edit'),
+                          ),
+                          const PopupMenuItem(
+                            value: 2,
+                            child: Text('Delete'),
+                          ),
+                        ]))
               ],
             ),
           ],

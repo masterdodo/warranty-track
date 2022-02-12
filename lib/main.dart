@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.indigo,
       ),
-      home: const WarrantyList(title: 'Warrannties'),
+      home: const WarrantyList(),
     );
   }
 }

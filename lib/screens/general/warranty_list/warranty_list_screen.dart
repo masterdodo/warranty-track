@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:garancija_app/screens/general/warranty_list/components/add_warranty_item.dart';
 import 'package:garancija_app/screens/general/warranty_list/components/warranty_item.dart';
 
 class WarrantyList extends StatefulWidget {
-  const WarrantyList({Key? key, required this.title}) : super(key: key);
+  const WarrantyList({Key? key}) : super(key: key);
 
-  final String title;
+  static const String title = "Warrannties";
 
   @override
   State<WarrantyList> createState() => _WarrantyListState();
@@ -17,7 +18,7 @@ class _WarrantyListState extends State<WarrantyList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: const Text(WarrantyList.title),
       ),
       body: Center(
         child: ListView(
@@ -26,6 +27,21 @@ class _WarrantyListState extends State<WarrantyList> {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).restorablePush(_dialogBuilder);
+        },
+        child: const Icon(Icons.add),
+        tooltip: 'Add',
+      ),
+    );
+  }
+
+  static Route<Object?> _dialogBuilder(
+      BuildContext context, Object? arguments) {
+    return DialogRoute<void>(
+      context: context,
+      builder: (BuildContext context) => const AddWarrantyItem(),
     );
   }
 }
