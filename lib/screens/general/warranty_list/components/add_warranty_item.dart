@@ -9,7 +9,7 @@ class AddWarrantyItem extends StatefulWidget {
 
 class _AddWarrantyItemState extends State<AddWarrantyItem> {
   final TextEditingController _name = TextEditingController();
-  final TextEditingController _purchaseDate = TextEditingController();
+  DateTime _date = DateTime.now();
   final TextEditingController _warrantyLength = TextEditingController();
 
   @override
@@ -32,6 +32,12 @@ class _AddWarrantyItemState extends State<AddWarrantyItem> {
             lastDate: DateTime.now(),
             fieldHintText: "Purchase date",
             fieldLabelText: "Purchase date",
+            onDateSaved: (DateTime date) => setState(() {
+              _date = date;
+            }),
+            onDateSubmitted: (DateTime date) => setState(() {
+              _date = date;
+            }),
           ),
           TextField(
             controller: _warrantyLength,
@@ -40,11 +46,14 @@ class _AddWarrantyItemState extends State<AddWarrantyItem> {
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              primary: const Color(0xffA5D6A7),
+              primary: Theme.of(context).buttonTheme.colorScheme?.primary,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(18.0)),
             ),
             onPressed: () {
+              print(_name.text);
+              print(_date);
+              print(_warrantyLength.text);
               Navigator.pop(context);
             },
             child: const Text("Add"),

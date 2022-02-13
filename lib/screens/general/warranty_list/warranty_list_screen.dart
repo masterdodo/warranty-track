@@ -12,7 +12,22 @@ class WarrantyList extends StatefulWidget {
 }
 
 class _WarrantyListState extends State<WarrantyList> {
-  final List warranties = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+  final List warranties = [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "cdscs-fdsf",
+    "ksafjla-das",
+    "cdasds-sdf",
+    "cdfsd-sf"
+  ];
 
   @override
   Widget build(BuildContext context) {
